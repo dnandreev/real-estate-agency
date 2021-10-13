@@ -1,0 +1,92 @@
+﻿<Page x:Class="RealEstateAgency.DemandsPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:RealEstateAgency"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="450" d:DesignWidth="800"
+	  Title="Потребности">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<ListView Grid.RowSpan="12" Name="DemandsList" SelectionMode="Single" SelectionChanged="View">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Text}"/>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<Button Grid.Row="12" Click="Create" Content="Добавить"/>
+		<TextBlock Grid.Column="1" Grid.ColumnSpan="4" Name="Text" Text="Выберите потребность"/>
+		<TextBlock Grid.Column="1" Grid.Row="2" Text="Клиент"/>
+		<ComboBox Grid.Column="2" Grid.Row="2" Name="Client" DisplayMemberPath="PersonSet.Demo"/>
+		<TextBlock Grid.Column="1" Grid.Row="4" Text="Риелтор"/>
+		<ComboBox Grid.Column="2" Grid.Row="4" Name="Agent" DisplayMemberPath="PersonSet.Demo"/>
+		<TextBlock Grid.Column="1" Grid.Row="6" Text="Тип"/>
+		<ComboBox Grid.Column="2" Grid.Row="6" SelectedIndex="3" Name="Type">
+			<ComboBoxItem Content="Квартира"/>
+			<ComboBoxItem Content="Дом"/>
+			<ComboBoxItem Content="Земля"/>
+			<ComboBoxItem Content="Выбрать тип"/>
+		</ComboBox>
+		<TextBlock Grid.Column="1" Grid.Row="8" Text="Мин. цена"/>
+		<TextBox Grid.Column="2" Grid.Row="8" Name="PriceMin"/>
+		<TextBlock Grid.Column="1" Grid.Row="10" Text="Макс. цена"/>
+		<TextBox Grid.Column="2" Grid.Row="10" Name="PriceMax"/>
+		<TextBlock Grid.Column="3" Grid.Row="2" Text="Город"/>
+		<TextBox Grid.Column="4" Grid.Row="2" Name="Address_City"/>
+		<TextBlock Grid.Column="3" Grid.Row="4" Text="Улица"/>
+		<TextBox Grid.Column="4" Grid.Row="4" Name="Address_Street"/>
+		<TextBlock Grid.Column="3" Grid.Row="6" Text="Дом"/>
+		<TextBox Grid.Column="4" Grid.Row="6" Name="Address_House"/>
+		<TextBlock Grid.Column="3" Grid.Row="8" Text="Квартира"/>
+		<TextBox Grid.Column="4" Grid.Row="8" Name="Address_Number"/>
+		<TextBlock Grid.Column="3" Grid.Row="10" Text="Мин. площадь, м²"/>
+		<TextBox Grid.Column="4" Grid.Row="10" Name="TotalAreaMin"/>
+		<TextBlock Grid.Column="5" Grid.Row="2" Text="Макс. площадь, м²"/>
+		<TextBox Grid.Column="6" Grid.Row="2" Name="TotalAreaMax"/>
+		<TextBlock Grid.Column="5" Grid.Row="4" Text="Мин. этаж(ей)"/>
+		<TextBox Grid.Column="6" Grid.Row="4" Name="FloorOrTotalFloorsMin"/>
+		<TextBlock Grid.Column="5" Grid.Row="6" Text="Макс. этаж(ей)"/>
+		<TextBox Grid.Column="6" Grid.Row="6" Name="FloorOrTotalFloorsMax"/>
+		<TextBlock Grid.Column="5" Grid.Row="8" Text="Мин. комнат"/>
+		<TextBox Grid.Column="6" Grid.Row="8" Name="RoomsMin"/>
+		<TextBlock Grid.Column="5" Grid.Row="10" Text="Макс. комнат"/>
+		<TextBox Grid.Column="6" Grid.Row="10" Name="RoomsMax"/>
+		<Button Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="12" Click="Delete" Content="Удалить"/>
+		<Button Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="12" Click="Save" Content="Сохранить"/>
+		<TextBlock Grid.Column="7" Text="Предложения"/>
+		<ListView Grid.Column="7" Grid.Row="1" Grid.RowSpan="11" Name="SuppliesList" SelectionMode="Single" SelectionChanged="View">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Text}"/>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<Button Grid.Column="7" Grid.Row="12" Click="Do" Content="Совершить сделку"/>
+	</Grid>
+</Page>

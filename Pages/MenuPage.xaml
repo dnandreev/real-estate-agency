@@ -1,0 +1,33 @@
+﻿<Page x:Class="RealEstateAgency.MenuPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:RealEstateAgency"
+	  mc:Ignorable="d"
+	  d:DesignWidth="800"
+	  d:DesignHeight="450"
+	  Title="Главное меню">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Button Grid.Row="1" Click="Agents" Content="Риелторы"/>
+		<Button Grid.Row="3" Click="Clients" Content="Клиенты"/>
+		<Button Grid.Row="5" Click="RealEstates" Content="Объекты недвижимости"/>
+		<Button Grid.Row="7" Click="Supplies" Content="Предложения"/>
+		<Button Grid.Row="9" Click="Demands" Content="Потребности"/>
+		<Button Grid.Row="11" Click="Deals" Content="Сделки"/>
+	</Grid>
+</Page>
